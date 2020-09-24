@@ -1,0 +1,55 @@
+/* Seletor de Atributos */
+/* São mais lentos, usar quando necessário */
+/* seletor[atributo="valor"] */
+
+/* Selecionou os inputs e restringiu apenas ao type=submit */
+input[type="submit"]{
+    font-weight: bold; /* fonte negrito */
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+input[type="text"],
+input[type="password"]{
+    width: 99%; /* largura */
+    height: 20px; /* altura */
+    margin-bottom: 15px; /* margem de baixo */
+    border-radius: 5px; /* borda arredondada */
+    border: 2px solid rgb(88, 86, 86);
+}
+
+/* Como selecionar parte de um atributo: */
+
+label[class*="bel"]{
+    border-left: 2px solid red;
+    padding-left: 5px;
+}
+
+/* 
+o uso do '*' diz que é para selecionar o atributo class que conter aquela palavra(valor) ou parte dela no valor do atributo. Exemplo: label, lab, bel;
+o uso do '|' diz que é para selecionar o atributo class que conter a palavra(valor) inteira no valor do atributo. Exemplo: label;
+o uso do '^' diz que é para selecionar o atributo class que conter a palavra(valor) inteira ou o ínicio dela no valor do atributo. Exemplo: label, lab;
+o uso do '$' diz que é para selecionar o atributo class que seleciona o fim da string(valor) no valor do atributo. Exemplo: 'label-username' vai selecionar o username;
+o uso do '~' diz que é para selecionar o atributo class que conter a palavra(valor) separada por espaço no valor do atributo. Exemplo: ao invés de 'label-username' teria que ser 'label username';
+ */
+/*
+EXEMPLOS:
+
+label[class|="label"]{
+    border-left: 2px solid red;
+    padding-left: 5px;
+}
+label[class^="lab ou label"]{
+    border-left: 2px solid red;
+    padding-left: 5px;
+}
+label[class$="username"]{
+    border-left: 2px solid red;
+    padding-left: 5px;
+}
+label[class~="label"]{
+    border-left: 2px solid red;
+    padding-left: 5px;
+}
+*/
